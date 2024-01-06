@@ -1,17 +1,28 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createUseStyles } from 'react-jss';
 
-import React from 'react'
-import { createUseStyles } from 'react-jss'
-import { useNavigate } from 'react-router-dom'
+const useStyles = createUseStyles({
+  myText: {
+    color: 'red',
+    cursor: 'pointer',
+  },
+});
 
-const useStyle = createUseStyles({
-  myText : {
-    color:'red'
-  }
-})
-export default function Login() {
-  const navigate = useNavigate()
-  const classes = useStyle()
+const Login = ({ user }) => {
+  const navigate = useNavigate();
+  const classes = useStyles();
+
+  const handleClick = () => {
+    const dashboardPath = user ? '/userDashboard' : '/pmDashboard';
+    navigate(dashboardPath);
+  };
+
   return (
-    <div className={classes.myText} onClick={ ()=> navigate('/Dashboard')}>login</div>
-  )
-}
+    <div className={classes.myText} onClick={handleClick}>
+      login
+    </div>
+  );
+};
+
+export default Login;

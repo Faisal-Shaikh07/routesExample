@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const NoComponent = () => {
-  return (
-    <div>No PAge Found </div>
-  )
-}
+  return <div>No Pagesss Found</div>;
+};
 
 export default NoComponent;

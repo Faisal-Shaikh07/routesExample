@@ -1,10 +1,7 @@
-import { Box, Input, Typography } from '@mui/material'
-import React from 'react'
+import React from 'react';
 
-export default function User() {
-  return (
-    <>
-      <h1>knujn</h1>
-    </>
-  )
-}
+const User = () => {
+  return <h1>User Component</h1>;
+};
+
+export default User;
